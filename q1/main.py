@@ -1,8 +1,9 @@
 from unicodedata import normalize
 
 if __name__ == '__main__':
-    inp = input('Entre com uma palavra ou frase: ').strip().upper().replace(' ', '')
-    inp_normalizado = normalize('NFKD', inp).encode('ASCII', 'ignore').decode('ASCII')
+    inp = input('Entre com uma palavra ou frase: ')
+    inp2 = inp.strip().upper().replace(' ', '')
+    inp_normalizado = normalize('NFKD', inp2).encode('ASCII', 'ignore').decode('ASCII')
     aux = []
     pontuacoes = [
         '!', '?', '.', ',', ':',
@@ -19,4 +20,3 @@ if __name__ == '__main__':
         print(f'{inp} é um palíndromo')
     else:
         print(f'{inp} não é um palíndromo')
-    print(inp_normalizado)
